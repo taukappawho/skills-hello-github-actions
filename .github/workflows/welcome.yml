@@ -13,3 +13,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
+  welcome1:
+    name: Post welcome1 comment
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh pr comment "$PR_URL" --body "Welcome (1) to the repository!"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+  welcome2:
+      name: Post welcome2 comment
+      runs-on: ubuntu-latest
+      steps:
+        - run: gh pr comment "$PR_URL" --body "Welcome (2) to the repository!"
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            PR_URL: ${{ github.event.pull_request.html_url }}
